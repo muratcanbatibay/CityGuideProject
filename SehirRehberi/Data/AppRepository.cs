@@ -36,7 +36,7 @@ namespace SehirRehberi.Data
 
         public City GetCityById(int cityId)
         {
-            var city = _context.Cities.Include(c => c.Photos).FirstOrDefault();
+            var city = _context.Cities.Include(c => c.Photos).Where(x=>x.Id==cityId).FirstOrDefault();
             return city;
         }
 
